@@ -29,8 +29,48 @@ Solution:
            a, b, sum = 1, 2, 0
           while(a<=4000000):   # range is 4 million 
             if a%2 == 0:
-              sum +=a
+              sum += a
             a, b = b , a + b
           return sum
           
      
+#Largest prime factor
+Problem 3 
+The prime factors of 13195 are 5, 7, 13 and 29.
+What is the largest prime factor of the number 600851475143 ?
+
+Ans: 6857
+
+Solution: 
+	import math
+
+	def find_largest_prime(num):
+	    largest_prime = 0
+	    if(num % 2 == 0):
+		largest_prime = 2
+
+	    while(num%2==0):
+		num /=2
+
+	    for i in range(3,int(math.sqrt(num))+ 1,2):
+		while(num%i == 0):
+		    if (largest_prime < i):
+			largest_prime = i
+			num = num/i
+
+	    if (num > 2):
+		if (largest_prime < num):
+		    largest_prime = num
+
+	    return largest_prime
+
+	print(find_largest_prime(600851475143))
+
+		 if (num > 2): 
+		    if (largest_prime < num):
+			largest_prime = num
+
+	    return largest_prime
+   
+   largest_prime = find_largest_prime(600851475143)
+   print(largest_prime)
