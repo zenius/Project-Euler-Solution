@@ -58,19 +58,7 @@ Solution:
 			largest_prime = i
 			num = num/i
 
-	    if (num > 2):
-		if (largest_prime < num):
+	    if (num > 2 and largest_prime < num):
 		    largest_prime = num
 
-	    return largest_prime
-
-	print(find_largest_prime(600851475143))
-
-		 if (num > 2): 
-		    if (largest_prime < num):
-			largest_prime = num
-
-	    return largest_prime
-   
-   largest_prime = find_largest_prime(600851475143)
-   print(largest_prime)
+	 return largest_prime
